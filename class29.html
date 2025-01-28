@@ -1,0 +1,67 @@
+// Events
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM |Events | Js</title>
+    <style>
+        body{
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <ul id="list">
+            <li>Moday</li>
+            <li>Tuesday</li>
+            <li>Wednesday</li>
+            <li>Thursday</li>
+            <li>Friday</li>
+        </ul>
+    </div>
+
+    <script>
+        let var1 = document.querySelector('.parent')
+        var1.style.backgroundColor='green'
+        var1.style.padding='10px'
+        var1.children[0].style.backgroundColor ='yellow'
+        var1.children[0].style.color= 'black'
+        var1.children[0].style.padding= '10px'
+
+        let var2 = document.querySelector('#list')
+        var2.children[1].style.backgroundColor = 'green'
+        var2.children[3].style.color = 'red'
+        var2.children[2].style.backgroundColor = 'pink'
+        var2.setAttribute('title', 'ulList')
+
+        function addLang(addLang){
+            const li = document.createElement('li')
+            li.appendChild(document.createTextNode(`${addLang}`))
+            document.querySelector('#list').appendChild(li)
+        }
+
+        addLang('Saturday')
+        
+
+        //remove
+    var2.children[4].remove()
+        var2.children[0].outerHTML = '<li>hello g</li>'
+             
+        let buk = document.querySelector('li:nth-child(3)')
+        buk.innerHTML= 'hello G'
+
+        let ruk = document.querySelector('li:nth-child(3)')
+        ruk.innerHTML = 'i want to learn '
+
+        buk.replaceWith(ruk)
+
+
+    //edit
+    
+
+    </script>
+</body>
+</html>

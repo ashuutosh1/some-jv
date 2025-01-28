@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    body{
+        background-color:black;
+        color: #ffffff;
+        display: flex;
+        justify-content: center;
+
+    }
+    ul li {
+        list-style-type: none;
+    }
+    #images{
+        display: grid;
+        grid-template-columns: repeat(3,300px);
+        gap: 10px;
+        padding: 5px;
+    }
+    h2{
+        display: flex;
+        justify-content: center;
+    }
+    a{
+        color: yellow;
+    }
+
+    </style>
+</head>
+<body>
+    <div>
+        <h2>My collections</h2>
+        <ul id="images">
+            <li>
+                   <img src="https://cdn.pixabay.com/photo/2014/11/21/17/17/house-540796_1280.jpg" 
+                   alt="img" id="house" width="300px">
+            </li>
+            <li>
+                <img src="https://cdn.pixabay.com/photo/2024/01/08/15/54/defile-8495836_1280.jpg" 
+                alt="img" id="mountains" width="300px">
+            </li>
+            <li>
+                <img src="https://cdn.pixabay.com/photo/2023/08/04/22/59/sunset-8170058_1280.jpg" 
+                alt="img" id="City" width="300px">
+            </li>
+            <li>
+                <img src="https://cdn.pixabay.com/photo/2017/11/12/13/37/forest-2942477_1280.jpg" 
+                alt="img" id="forest" width="300px">
+            </li>
+            <li>
+                <img src="https://cdn.pixabay.com/photo/2023/09/05/16/39/sunrise-8235458_1280.jpg" 
+                alt="img" id="sea" width="300px">
+            </li>
+            <li>
+                <img src="https://cdn.pixabay.com/photo/2024/05/08/17/45/animal-8748794_1280.jpg" 
+                alt="img" id="animal" width="300px">
+            </li>
+            <li>
+                <a href="https://www.google.com" id="google" target="_blank">google</a>
+            </li>
+        </ul>
+    </div>
+    <script>
+        //   document.getElementById('forest').onclick = function(){
+        //     alert('forest click')
+        //   }
+
+        //  EventListener gives you all event propogation properties
+
+        // default 3rd parameter -> false  -> event bubbling phase 
+
+        // true -> event capturing phase  inner to outer , bottom to top
+
+        // browser and environment events  outer to inner , top to bottom
+
+        // document.getElementById('forest').addEventListener ('click', function(event){
+        //     console.log(event)
+        // },false)
+
+        // type, timeStamp, defaultPrevented, target , toElement , srcElement , currentTarget
+        // clientX, clientY , offsetX, offsetY, screenX, screenY
+        // altkey , ctrlKey , shiftKey , keyCode 
+
+        // attachEvent
+        // jQuery -> on event
+
+
+        // document.querySelector('#images').addEventListener('click', function(event){
+        //       console.log('im a mother fukin millionaire')
+        // },true)  
+
+
+        // document.querySelector('#house').addEventListener('click', function(event){
+        //       console.log('this is my house')
+        // },true)
+
+        // document.querySelector('#images').addEventListener('click', function(event){
+        //       console.log('im a mother fukin millionaire')
+        // },false)  
+
+
+        // document.querySelector('#house').addEventListener('click', function(event){
+        //       console.log('this is my house')
+        //       event.stopPropagation()   // stop propagation function method to prevent bubble to go to top
+        // },false)
+
+        // document.getElementById('google').addEventListener( 'click' , function (event){
+        //           event.preventDefault();        // this is function method to prevent the link to generate
+        //           event.stopPropagation()
+        //           console.log('google clicked')
+        // }, false)
+
+
+        // document.getElementById('images').addEventListener('click' ,function (event) {
+        //     // console.log(event.target.parentNode) ; // it shows from which target event is occuring
+
+        //     let removeIt = event.target.parentNode
+        //     removeIt.remove()
+        //   // removeIt.parentNode.removeChild(removeIt)
+        // })
+
+        document.querySelector('#google').addEventListener('click' , function (event){
+            event.preventDefault()
+        })
+
+
+        document.getElementById('images').addEventListener('click' ,function (event) {
+             console.log(event.target.tagName) ; // it shows from which target event is occuring
+             
+             if(event.target.tagName === 'IMG'){
+                console.log(event.target.id);
+                
+                let removeIt = event.target.parentNode
+                removeIt.remove()
+             }
+
+        })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

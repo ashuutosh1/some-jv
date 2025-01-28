@@ -1,0 +1,54 @@
+
+
+
+<!--setTimeout() method and clear-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <h1>Nitesh or code</h1>
+    <button id="stop">stop</button> -->
+
+    <h1>Nitesh or JavaScript</h1>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+
+    <script>
+         setTimeout(function(){
+            console.log('Nitesh')
+         }, 5000)
+         
+         setInterval(function (){
+            console.log('Hitesh')
+         },3000)
+
+
+        const hellog = function (){
+            console.log('I love you')
+        }
+
+
+        const changeText = function (){
+            document.querySelector('h1').innerHTML = 'my name is Nitesh'
+        }
+
+        const changeMe = setTimeout(changeText,3000)
+
+       document.querySelector('#stop').addEventListener('click', function(){
+        clearTimeout(changeMe)
+        console.log(stopped)
+       })
+
+
+    setInterval(function(){
+        console.log(document.querySelector('h1'))
+    },2000)
+
+    </script>
+</body>
+</html>

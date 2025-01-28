@@ -1,0 +1,61 @@
+
+<!-- // setInterval() method and clear  -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Nitesh or JavaScript</h1>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+
+    <script>
+        // Define the interval ID outside the functions so it can be accessed globally
+        // let intervalId;
+
+        // // Function to print "Nitesh"
+        // const sayDate = function(){
+        //     console.log('Nitesh');
+        // }
+
+        // // Start button click event
+        // document.querySelector('#start').addEventListener('click', function(){
+        //     // Prevent starting multiple intervals if already started
+        //     if (!intervalId) {
+        //         intervalId = setInterval(sayDate, 1000);
+        //         console.log('Interval started');
+        //     }
+        // });
+
+        // // Stop button click event
+        // document.querySelector('#stop').addEventListener('click', function(){
+        //     clearInterval(intervalId);
+        //      intervalId = null; // Reset intervalId so that it can be restarted
+        //     console.log('Interval stopped');
+        // });
+
+
+        let validId;
+
+        document.querySelector('#start').addEventListener('click' , function(){
+            if(!validId){
+                validId = setInterval(() => {console.log('Nitesh')},1000)
+                console.log('started')
+            }
+
+            document.querySelector('#stop').addEventListener('click' , function(){
+                clearInterval(validId)
+                validId = null;
+                console.log('stopped')
+            })
+        })
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Number Guessing Game</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body style="background-color: #212121; color: #fff">
+    <!-- <nav>
+      <a href="/" aria-current="page">Home</a>
+      <a target="_blank" href="https://www.youtube.com/@chaiaurcode"
+        >Youtube channel</a
+      >
+    </nav> -->
+
+    <h1>Start should change the Background color every second</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    <script>
+       
+
+        let intervalId;
+
+
+        // document.querySelector('#start').addEventListener('click', function(){
+        //     if(!intervalId){
+        //         intervalId = setInterval(function(){
+        //           let bkcolor = ['green', 'blue', 'yellow']
+        //           bkcolor.forEach( (items) =>{
+        //           body.style.backgroundColor = items
+        //           })
+
+        //           console.log('nitesh')
+        //         },1000)
+        //     }
+        // })
+        //     document.querySelector('#stop').addEventListener('click', function(){
+        //         clearInterval(intervalId)
+        //         intervalId = null;
+        //     })
+
+
+        const randomColor = function(){
+            const hex = '123456789ABCDEF'
+            let color = '#'
+
+            for(let i=0; i<6; i++){
+                color+= hex[Math.floor(Math.random()*16)]
+            }
+            return color;
+        }
+        //console.log(randomColor())
+
+        let body = document.querySelector('body')
+
+        const startChangingColor = function(){
+            if(!intervalId){
+                intervalId = setInterval(changeBgcolor, 1000 )
+            }
+        }
+        function changeBgcolor(){
+            body.style.backgroundColor = randomColor();
+        }
+
+        const stopChangingColor = function(){
+        //    let intervalId = setInterval(changeBgColor, 1000)
+              clearInterval(intervalId)
+              intervalId = null;
+        }
+
+
+        document.querySelector('#start').addEventListener('click', startChangingColor);
+        document.querySelector('#stop').addEventListener('click', stopChangingColor);
+
+    </script>
+  </body>
+</html>
